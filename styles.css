@@ -36,4 +36,6 @@ body {
 .grid-elem {
     border: 1px solid black;
     margin: 0;
+    user-select: none;
 }
+
