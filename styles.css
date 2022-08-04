@@ -1,41 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-body { 
-    margin: 0;  
+/* * {
+    border: 1px solid red;
+} */
+
+body {
+    margin: 0;
     background-color: #333333;
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
+
+}
+
+/*content*/
+.content-container {
+    display:flex;
+    justify-content: space-between;
 }
 
 .title {
     font-weight: 400;
     color: white;
     text-align: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
+/* grid */
 .grid-container {
     display: grid;
 
     height: 400px;
     width: 400px;
 
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-columns: repeat(16, 1fr);
 
     box-shadow: 5px 5px 10px;
+    border: 2px solid black;
 
-    position: absolute; 
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 
     grid-gap: 0;
 }
 
 
 .grid-elem {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 0;
     user-select: none;
 }
 
+/* options*/
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0 0 0 ;
+
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-container h3 {
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    height: 6%;
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: #999999;
+    height: 7%;
+    width: 51%;
+}
