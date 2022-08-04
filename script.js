@@ -1,45 +1,46 @@
+const container = document.querySelector('.grid-container');
+const clearBtn = document.querySelector('.btn-clear');
+const slider = document.querySelector('.slider');
 
-// create 16x16 div grid
+let mouseDown = false;
+
+document.body.addEventListener('pointerdown', () => { mouseDown = true; });
+document.body.addEventListener('pointerup', () => { mouseDown = false; });
+clearBtn.addEventListener('click', clearColor);
+slider.addEventListener('input', (e) => {
+    removeGrid();
+    createGrid(e.target.value);
+    responsiveGridElems();
+});
+
+// creates the grid within grid-container div
 function createGrid(size) {
-    const container = document.querySelector('.grid-container');
     container.style.cssText = `grid-template-columns: repeat(${size}, 1fr);
                                grid-template-rows: repeat(${size}, 1fr);`
     let grid_elem;
 
-    for (let i = 0; i < size**2; ++i) {
+    for (let i = 0; i < size ** 2; ++i) {
         grid_elem = document.createElement('div');
         grid_elem.className = 'grid-elem';
         container.appendChild(grid_elem);
     }
 }
 
+// removes grid elements from grid
 function removeGrid() {
-    const container = document.querySelector('.grid-container');
-    let grid_elems = container.querySelectorAll(":scope > div");
-
+    const grid_elems = container.querySelectorAll(":scope > div");
     grid_elems.forEach((item) => item.remove());
 }
 
-createGrid(16);
-// etch and sketch mechanism
-
-let mouseDown = false;
-document.body.addEventListener('pointerdown', () => { mouseDown = true; });
-document.body.addEventListener('pointerup', () => { mouseDown = false; });
-
+// grid element change color
 function changeColor(e) {
-
-    console.log(mouseDown);
     if (e.type == 'pointerover' && !mouseDown) {
         return;
     }
-
-
     e.target.style.cssText = 'background-color: white';
-
-
 }
 
+//event listener for grid element color change
 function responsiveGridElems() {
     let grid_elems = document.querySelectorAll('.grid-elem');
     grid_elems.forEach((grid_elem) => {
@@ -48,23 +49,12 @@ function responsiveGridElems() {
     })
 }
 
-responsiveGridElems();
-
 // clear button
 function clearColor(base_color = '#333333') {
-    const container = document.querySelector('.grid-container');
     let grid_elems = container.querySelectorAll(":scope > div");
-
     grid_elems.forEach((item) => item.style.cssText = `background-color: ${base_color};`);
 }
 
-const clearBtn = document.querySelector('.btn-clear');
-clearBtn.addEventListener('click', clearColor);
-
-// slider
-const slider = document.querySelector('.slider');
-slider.addEventListener('input', (e) => { 
-    removeGrid();
-    createGrid(e.target.value);
-    responsiveGridElems();
-});
+// driver
+createGrid(16);
+responsiveGridElems();
