@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* * {
-    border: 1px solid red;
-} */
-
 body {
     margin: 0;
     background-color: #333333;
@@ -15,7 +11,8 @@ body {
 /*content*/
 .content-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .title {
@@ -48,7 +45,6 @@ body {
 
 
 .grid-elem {
-    /* border: 1px solid black; */
     margin: 0;
     user-select: none;
 }
@@ -56,11 +52,9 @@ body {
 /* options*/
 .options {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     gap: 10px;
-    margin: 10px 0 0 0;
 
 }
 
@@ -78,14 +72,14 @@ body {
 }
 
 .btn {
-    height: 6%;
-    width: 50%;
+    height: 40px;
+    width: 80px;
     border: 2px solid black;
     border-radius: 8px;
 }
 
 .btn:hover {
     background-color: #999999;
-    height: 7%;
-    width: 51%;
+    height: 50px;
+    width: 90px;
 }
