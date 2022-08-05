@@ -1,6 +1,7 @@
 const container = document.querySelector('.grid-container');
 const clearBtn = document.querySelector('.btn-clear');
 const slider = document.querySelector('.slider');
+const sliderText = document.querySelector('.slider-container h3');
 
 let mouseDown = false;
 
@@ -11,7 +12,9 @@ slider.addEventListener('input', (e) => {
     removeGrid();
     createGrid(e.target.value);
     responsiveGridElems();
+    changeSliderText(e.target.value);
 });
+
 
 // creates the grid within grid-container div
 function createGrid(size) {
@@ -55,6 +58,12 @@ function clearColor(base_color = '#333333') {
     grid_elems.forEach((item) => item.style.cssText = `background-color: ${base_color};`);
 }
 
-// driver
+// change slider text upon slider change
+function changeSliderText(size) {
+    sliderText.textContent = `${size}x${size}`;
+}
+
+
+// initial setup
 createGrid(16);
 responsiveGridElems();
