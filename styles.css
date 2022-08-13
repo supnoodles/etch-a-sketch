@@ -5,6 +5,7 @@ body {
     background-color: #333333;
     font-family: 'Roboto', sans-serif;
     height: 100vh;
+    overflow: hidden;
 
 }
 
@@ -17,26 +18,24 @@ body {
 
 .title {
     font-weight: 400;
+    font-size: 4vh;
     color: white;
     text-align: center;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    margin-top: 4vh;
 }
 
 /* grid */
 .grid-container {
     display: grid;
 
-    height: 400px;
-    width: 400px;
+
+    height: 50vh;
+    width: 70vw;
 
 
     box-shadow: 5px 5px 10px;
     border: 2px solid black;
 
-    position: relative;
-    left: 0;
-    right: 0;
     margin-left: auto;
     margin-right: auto;
 
@@ -52,9 +51,9 @@ body {
 /* options*/
 .options {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    gap: 10px;
+    gap: 1vw;
 
 }
 
@@ -72,14 +71,30 @@ body {
 }
 
 .btn {
-    height: 40px;
-    width: 80px;
+    height: 5vh;
+    min-height: 40px;
+    width: 15vw;
+    min-width: 100px;
+
     border: 2px solid black;
     border-radius: 8px;
+
+    font-size: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn:hover {
-    background-color: #999999;
-    height: 50px;
-    width: 90px;
+.slider {
+    accent-color: #F55050;
+}
+
+.slider-title {
+    user-select: none;
+}
+
+@media (hover: hover) {
+    .btn:hover {
+        background-color: #999999;
+    }
 }
