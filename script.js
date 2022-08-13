@@ -1,18 +1,21 @@
 const container = document.querySelector('.grid-container');
 const clearBtn = document.querySelector('.btn-clear');
 const slider = document.querySelector('.slider');
-const sliderText = document.querySelector('.slider-container h3');
+const sliderText = document.querySelector('.slider-title');
 
 let mouseDown = false;
 
-document.body.addEventListener('pointerdown', () => { mouseDown = true; });
-document.body.addEventListener('pointerup', () => { mouseDown = false; });
+document.body.addEventListener('pointerdown', (e) => { mouseDown = true;});
+document.body.addEventListener('pointerup', (e) => { mouseDown = false;});
+
 clearBtn.addEventListener('click', clearColor);
 slider.addEventListener('input', (e) => {
+    changeSliderText(e.target.value);
+});
+slider.addEventListener('change', (e) => {
     removeGrid();
     createGrid(e.target.value);
     responsiveGridElems();
-    changeSliderText(e.target.value);
 });
 
 
@@ -24,7 +27,7 @@ function createGrid(size) {
 
     for (let i = 0; i < size ** 2; ++i) {
         grid_elem = document.createElement('div');
-        grid_elem.className = 'grid-elem';
+        grid_elem.classList.add('grid-elem', `grid-elem${i}`);
         container.appendChild(grid_elem);
     }
 }
@@ -47,8 +50,8 @@ function changeColor(e) {
 function responsiveGridElems() {
     let grid_elems = document.querySelectorAll('.grid-elem');
     grid_elems.forEach((grid_elem) => {
-        grid_elem.addEventListener('pointerdown', changeColor);
         grid_elem.addEventListener('pointerover', changeColor);
+        grid_elem.addEventListener('pointerdown', changeColor);
     })
 }
 
@@ -60,7 +63,7 @@ function clearColor(base_color = '#333333') {
 
 // change slider text upon slider change
 function changeSliderText(size) {
-    sliderText.textContent = `${size}x${size}`;
+    sliderText.textContent = `${size} x ${size}`;
 }
 
 
