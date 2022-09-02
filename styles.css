@@ -18,10 +18,10 @@ body {
 
 .title {
     font-weight: 400;
-    font-size: 4vh;
+    font-size: 2rem;
     color: white;
     text-align: center;
-    margin-top: 4vh;
+    margin-top: 1em;
     user-select: none;
 }
 
@@ -46,9 +46,9 @@ body {
 /* options*/
 .options {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    gap: 1vw;
+    gap: 10vw;
 
 }
 
@@ -66,9 +66,9 @@ body {
 }
 
 .btn {
-    height: 5vh;
     min-height: 40px;
-    width: 15vw;
+    max-height: 60px;
+    max-width: 150px;
     min-width: 100px;
 
     border: 2px solid black;
@@ -97,14 +97,14 @@ body {
 /* accommodate small width mobile phones */
 @media only screen and (max-width: 800px) {
     .grid-container {
-        height: 70vw;
-        width: 70vw;
+        height: 60vw;
+        width: 60vw;
     }
 }
 
 @media only screen and (min-width: 800px) {
     .grid-container {
-        height: 564px;
-        width: 564px;
+        height: 484px;
+        width: 484px;
     }
 }
