@@ -22,6 +22,7 @@ body {
     color: white;
     text-align: center;
     margin-top: 4vh;
+    user-select: none;
 }
 
 /* grid */
@@ -29,7 +30,7 @@ body {
     display: grid;
 
 
-    height: 50vh;
+    height: 70vw;
     width: 70vw;
 
 
@@ -98,3 +99,24 @@ body {
         background-color: #999999;
     }
 }
+/* 
+@media only screen and (max-width: 300px) {
+    .grid-container {
+        height: 40vw;
+        width: 40vw;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 400px) {
+    .grid-container {
+        height: 280px;
+        width: 280px;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 550px) {
+    .grid-container {
+        height: 350px;
+        width: 350px;
+    }
+} */
