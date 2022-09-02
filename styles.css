@@ -5,7 +5,7 @@ body {
     background-color: #333333;
     font-family: 'Roboto', sans-serif;
     height: 100vh;
-    overflow: hidden;
+    overflow: auto;
 
 }
 
@@ -28,11 +28,6 @@ body {
 /* grid */
 .grid-container {
     display: grid;
-
-
-    height: 70vw;
-    width: 70vw;
-
 
     box-shadow: 5px 5px 10px;
     border: 2px solid black;
@@ -96,5 +91,20 @@ body {
 @media (hover: hover) {
     .btn:hover {
         background-color: #999999;
+    }
+}
+
+/* accommodate small width mobile phones */
+@media only screen and (max-width: 800px) {
+    .grid-container {
+        height: 70vw;
+        width: 70vw;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .grid-container {
+        height: 564px;
+        width: 564px;
     }
 }
